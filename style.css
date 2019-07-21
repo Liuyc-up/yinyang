@@ -1,0 +1,49 @@
+body{
+    background: gray;
+}
+#taiji{
+    background: linear-gradient(to bottom, #fffcfc 0%,#fffcfc 50%,#000000 51%,#000000 100%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    animation-duration: 3s;
+    animation-name: spin;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+#taiji::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background:#fffcfc;
+    position:absolute;
+    left: 0;
+    top:50px;
+    border: 40px solid#000000;
+}
+
+#taiji::after{
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000000;
+    position:absolute;
+    right: 0;
+    top:50px;
+    border: 40px solid #fffcfc;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) 
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
